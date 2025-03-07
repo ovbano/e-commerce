@@ -2,11 +2,14 @@ const { Client } = require('pg');
 
 async function getConnection() {
   const client = new Client({
-    host: '192.168.2.104',
-    port: 5432,
-    user: 'espe',
-    password: 'espe',
-    database: 'myStore'
+    host: 'mainline.proxy.rlwy.net',
+    port: 36426,
+    user: 'postgres',
+    password: 'bNfKkOCbHipJEGauXyXlvBUvKRRRrINt',
+    database: 'railway',
+    ssl: {
+      rejectUnauthorized: false,
+    },
   });
   await client.connect();
   return client;
